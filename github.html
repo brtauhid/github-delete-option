@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Hide Show Element -->
+    <!-- <h1 id="secret-info">My Secret info</h1>
+    <button id="btn-delete">Delete</button>
+    <button id="btn-reset">Reset</button> -->
+
+    <!-- Github delete option setup -->
+    <h1 id="secret-info">Github Delete Option</h1>
+    <input id='delete-confirm' type="text" placeholder="Please type Delete">
+    <button id="btn-delete" disabled>Delete</button>
+
+
+    <script>
+
+        // Hide or show element
+        // document.getElementById('btn-delete').addEventListener('click',function(){
+        //     const secret = document.getElementById('secret-info');
+        //     secret.style.visibility = 'hidden';
+        // })
+        // document.getElementById('btn-reset').addEventListener('click',function(){
+        //     const secret = document.getElementById('secret-info');
+        //     secret.style.visibility = 'visible';
+        // })
+
+        // Github delete option setup
+        document.getElementById('delete-confirm').addEventListener('keyup',function(event){
+           const text = event.target.value;
+           const deleteBtn = document.getElementById('btn-delete');
+           if(text === 'delete'){
+            deleteBtn.removeAttribute('disabled');
+           } else {
+            deleteBtn.setAttribute('disabled', true)
+           }
+        })
+        document.getElementById('btn-delete').addEventListener('click',function(){
+            const secret = document.getElementById('secret-info');
+            secret.style.visibility = 'hidden';
+        })
+    </script>
+</body>
+</html>
