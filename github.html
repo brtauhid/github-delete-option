@@ -39,6 +39,12 @@
             deleteBtn.setAttribute('disabled', true)
            }
         })
+
+        // Github Delete button
+        document.getElementById('btn-delete').addEventListener('click',function(){
+            const secret = document.getElementById('secret-info');
+            secret.style.visibility = 'hidden';
+        })
     </script>
 </body>
 </html>
